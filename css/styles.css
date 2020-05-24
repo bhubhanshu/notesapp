@@ -1,0 +1,22 @@
+@font-face{
+    font-family: chelsea;
+    src: url("../ChelseaMarket-Regular.ttf");
+}
+body{
+    background: url("../imgs/badhon-ebrahim-ZA3RbOz6YZ0-unsplash.jpg") no-repeat center center fixed;
+    padding-top: 2rem;
+    background-color: #ddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: chelsea;
+}
+h1{
+    color: floralwhite;
+    font-size: 4rem;
+}
+h2{
+    color: floralwhite;
+    font-size: 2.5rem;
+}
