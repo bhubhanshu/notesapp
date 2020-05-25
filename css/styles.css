@@ -2,6 +2,10 @@
     font-family: chelsea;
     src: url("../ChelseaMarket-Regular.ttf");
 }
+@font-face{
+    font-family: gotu;
+    src: url("../Gotu-Regular.ttf");
+}
 body{
     background: url("../imgs/badhon-ebrahim-ZA3RbOz6YZ0-unsplash.jpg") no-repeat center center fixed;
     padding-top: 2rem;
@@ -40,4 +44,13 @@ h2{
 }
 #notesbody{
     background: black;
+}
+#saved,#current{
+    font-family: gotu;
+}
+#heading{
+    font-weight: bold;
+}
+div[id$="heading"]{
+    font-weight: bold;
 }

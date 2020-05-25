@@ -30,7 +30,6 @@ $('#reset').click(function(){
     $('input').val("");
     $('textarea').val("");
 });
-
 $('#save').click(function(){
     var h1=htmlEntities($('#heading').val());
     var txt=htmlEntities($('#text').val());
@@ -61,15 +60,24 @@ $('#save').click(function(){
     </div>\
     </div>');
     num++;
+    addListenerDeleteButton('.delete');
+    addListenerEditButton('.edit');
 });
-
-$('.delete').click(function(){
-    $(this).parent().parent().remove();
-});
-
-$('.edit').click(function(){
-    $('#heading').val($(this).parent().parent().children('.card-header').children('div').text());
-    $('#text').val($(this).parent().parent().children('.card-body').children('div').text());
-    $(this).parent().parent().remove();
-});
+function addListenerDeleteButton(deleteButton) {
+    $(deleteButton).click(function () { 
+        $(this).parent().parent().remove();
+        $('#message').empty();
+        $('#message').append("Note Deleted");
+        $('#message').css("color","red");
+    });
+}
+function addListenerEditButton(editButton) {
+    $(editButton).click(function () {
+        $('#message').empty();
+        $('#heading').val($(this).parent().parent().children('.card-header').children('div').text());
+        $('#text').val($(this).parent().parent().children('.card-body').children('div').text());
+        $(this).parent().parent().remove();
+    });
+}
+  
 
