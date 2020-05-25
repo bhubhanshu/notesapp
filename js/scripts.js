@@ -1,4 +1,7 @@
-
+var num=0;
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 $('#change').click(function(){
     var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
     $('body').css("background",randomColor);
@@ -29,18 +32,44 @@ $('#reset').click(function(){
 });
 
 $('#save').click(function(){
-    var h1=$('#heading').val();
-    var txt=$('#text').val();
+    var h1=htmlEntities($('#heading').val());
+    var txt=htmlEntities($('#text').val());
+    $('#message').empty();
+    if(h1.length==0){
+        $('#message').append("Please add a heading");
+        $('#message').css("color","red");
+        return;
+    }
+    if(txt.length==0){
+        $('#message').append("Notes Empty");
+        $('#message').css("color","red");
+        return;
+    }
+    $('#message').append("Note added");
+    $('#message').css("color","green");
     $('input').val("");
     $('textarea').val("");
-    
-    $('#saved').append('<div class="card border-success text-black" style="max-width: 24rem;">\
+
+    $('#saved').append('<div class="card border-success text-black ml-5" style="max-width: 24rem;">\
     <div class="card-header bg-warning">\
-        <div id="saved1heading">'+h1+'</div>\
+        <div id="saved'+num+'heading">'+h1+'</div>\
     </div>\
     <div class="card-body">\
-        <div id="saved1text">'+txt+'</div>\
+        <div id="saved'+num+'text" class="mb-3">'+txt+'</div>\
+        <button class="btn btn-primary text-white edit">Edit</button>\
+        <button class="btn btn-danger text-white delete">Delete</button>\
     </div>\
-    <button type="submit" class="btn btn-danger text-white" id="edit">Edit</button>\
-    </div>')
+    </div>');
+    num++;
 });
+
+$('.delete').click(function(){
+    $(this).parent().parent().remove();
+});
+
+$('.edit').click(function(){
+    $('#heading').val($(this).parent().parent().children('.card-header').children('div').text());
+    $('#text').val($(this).parent().parent().children('.card-body').children('div').text());
+    $(this).parent().parent().remove();
+});
+
