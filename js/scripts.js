@@ -50,7 +50,7 @@ $('#save').click(function(){
     $('input').val("");
     $('textarea').val("");
 
-    $('#saved').append('<div class="card border-success text-black ml-5" style="max-width: 24rem;">\
+    $('#saved').append('<div class="card border-success text-black mx-5 my-5" style="width: auto; height: auto;">\
     <div class="card-header bg-warning">\
         <div id="saved'+num+'heading">'+h1+'</div>\
     </div>\
