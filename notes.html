@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bs4/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bs4/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bs4/bootstrap-social/bootstrap-social.css">
+    <title>Take Notes: Note,Lite</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="notesbody">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <h1 class="text-center">Note,Lite</h1>
+        </div>
+        <hr><br>
+        <div class="row justify-content-center justify-content-md-end">
+            <button type="button" class="btn btn-warning" id="change">Click to Change Background Colour</button>
+        </div></div>
+        <hr><br><br><br>
+        <div class="row justify-content-center">
+                <div class="card border-success text-black" style="max-width: 24rem;" id="current">
+                    <div class="card-header bg-warning">
+                        <input type="text" size="15" placeholder="Heading" id="heading"> 
+                        <span class=" d-none d-md-inline">
+                            Size
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-info" id="currsize">24 rem</button>
+                                <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" id="24">24 rem</a>
+                                    <a class="dropdown-item" id="28">28 rem</a>
+                                    <a class="dropdown-item" id="32">32 rem</a>
+                                    <a class="dropdown-item" id="44">44 rem</a>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <textarea style="width: 20rem; height: 10rem;" id="text"></textarea>
+                        <button class="btn btn-info text-white" id="reset">Reset</button>
+                        <button class="btn btn-success text-white" id="save">Save</button>
+                    </div>
+                </div>
+        </div>
+        <hr><br><br>
+        <div class="row ml-5" id="saved">
+            <div class="card border-success text-black" style="max-width: 24rem;">
+                <div class="card-header bg-warning">
+                    <div id="saved1heading">
+                        asksjfnjasf             
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="saved1text">
+                        akjssnbfjasfnnfk    
+                    </div>
+                </div>
+                <button class="btn btn-danger text-white" id="edit">Edit</button>
+            </div>
+        </div>
+    </div>
+    <script src="bs4/jquery/dist/jquery.slim.min.js"></script>
+    <script src="bs4/popper.js/dist/umd/popper.min.js"></script>
+    <script src="bs4/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -11,6 +11,24 @@ body{
     background-size: cover;
     -o-background-size: cover;
     font-family: chelsea;
+    max-width: 100%;
+}
+.container-fluid{
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+#start{
+    transition: 0.7s ease-in-out;
+}
+#start:hover{
+    transform: scale(1.5);
 }
 h1{
     color: floralwhite;
@@ -19,4 +37,7 @@ h1{
 h2{
     color: floralwhite;
     font-size: 2.5rem;
+}
+#notesbody{
+    background: black;
 }
